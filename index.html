@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Pukul Bahlil!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="title-wrap">
+      <span class="title-sub">GAME VIRAL INDONESIA</span>
+      <h1 class="title-main">PUKUL<br><span class="title-accent">BAHLIL!</span></h1>
+    </div>
+    <div class="score-board">
+      <div class="score-item">
+        <span class="score-label">PUKULAN</span>
+        <span class="score-value" id="hitCount">0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">COMBO</span>
+        <span class="score-value combo-val" id="comboCount">x1</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">SKOR</span>
+        <span class="score-value" id="scoreCount">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- GAME AREA -->
+  <main class="game-area">
+    <!-- Efek visual melayang -->
+    <div class="fx-container" id="fxContainer"></div>
+
+    <!-- Target foto -->
+    <div class="target-wrapper" id="targetWrapper">
+      <div class="target-ring ring1"></div>
+      <div class="target-ring ring2"></div>
+      <div class="target-frame" id="targetFrame">
+        <div class="target-inner" id="targetInner">
+          <img
+            id="targetImg"
+            src="img/bahlil.jpg"
+            alt="Target"
+            draggable="false"
+          />
+          <div class="hit-overlay" id="hitOverlay"></div>
+        </div>
+      </div>
+      <div class="crack-svg" id="crackSvg"></div>
+    </div>
+
+    <!-- Bar marah -->
+    <div class="anger-bar-wrap">
+      <span class="anger-label">TINGKAT KESAL</span>
+      <div class="anger-bar-bg">
+        <div class="anger-bar-fill" id="angerFill"></div>
+        <span class="anger-emoji-track" id="angerEmoji">😐</span>
+      </div>
+    </div>
+
+    <!-- Tombol aksi -->
+    <div class="action-row">
+      <button class="btn btn-hit" id="btnHit">PUKUL!</button>
+      <button class="btn btn-reset" id="btnReset">RESET</button>
+    </div>
+
+    <!-- Upload foto -->
+    <div class="upload-section">
+      <p class="upload-hint">Ganti dengan foto orang yang bikin kesal:</p>
+      <div class="upload-row">
+        <label class="btn btn-upload" for="fileInput">
+          Pilih Foto Sendiri
+        </label>
+        <button class="btn btn-default" id="btnDefault">Foto Bahlil</button>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" hidden />
+    </div>
+  </main>
+
+  <!-- PANEL KATA-KATA KESAL -->
+  <section class="rant-section">
+    <h2 class="rant-title">TERIAK KEKESALAN</h2>
+    <div class="rant-grid" id="rantGrid">
+      <!-- Diisi JS -->
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Hanya untuk hiburan. Tidak ada yang tersakiti secara nyata.</p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
